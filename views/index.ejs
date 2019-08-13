@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>Quoting Dojo Home</title>
+    <style>
+      .btn {
+        margin-left: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row mt-4">
+        <h1>Welcome to Quoting Dojo</h1>
+      </div>
+      <form action="/quotes" method="POST">
+        <div class="form-group">
+          <label for="name">Your Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            placeholder="Name here..."
+          />
+        </div>
+        <div class="form-group">
+          <label for="age">Your Quote:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="quote"
+            placeholder="Quote here..."
+          />
+        </div>
+        <div class="row">
+          <input type="submit" class="btn btn-info" value="Add my Quote!" />
+          <a href="/skip" class="btn btn-success">Skip to Quotes!</a>
+        </div>
+      </form>
+      <% if(messages.registration) { %>
+         <% for (var x of messages.registration){ %>
+            <h3><%= x %></h3>
+         <% } %>
+      <% } %>
+    </div>
+  </body>
+</html>
